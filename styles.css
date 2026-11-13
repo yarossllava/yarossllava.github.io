@@ -163,7 +163,7 @@ button:focus-visible {
   margin-inline: 0;
   padding: 3.5rem max(var(--page-gutter), calc((100% - var(--page-width)) / 2)) 4.5rem;
   background:
-    linear-gradient(90deg, rgb(250 249 246 / 30%), rgb(250 249 246 / 18%) 58%, rgb(250 249 246 / 10%) 100%),
+    linear-gradient(rgb(240 237 230 / 62%), rgb(240 237 230 / 62%)),
     url("img/hero.jpg") center / cover no-repeat;
   color: var(--color-text);
 }
@@ -916,24 +916,34 @@ button:focus-visible {
 
   .menu-icon {
     display: flex;
-    width: 20px;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
     flex-direction: column;
-    gap: 5px;
+    justify-content: center;
+    gap: 4px;
+    overflow: visible;
   }
 
   .menu-icon span {
     width: 100%;
-    height: 1px;
+    height: 2px;
+    flex: 0 0 2px;
+    border-radius: 2px;
     background: currentColor;
-    transition: transform 180ms ease;
+    transition: opacity 180ms ease, transform 180ms ease;
   }
 
   .menu-toggle[aria-expanded="true"] .menu-icon span:first-child {
-    transform: translateY(3px) rotate(45deg);
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) {
+    opacity: 0;
   }
 
   .menu-toggle[aria-expanded="true"] .menu-icon span:last-child {
-    transform: translateY(-3px) rotate(-45deg);
+    transform: translateY(-6px) rotate(-45deg);
   }
 
   .primary-nav {
