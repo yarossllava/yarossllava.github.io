@@ -78,7 +78,7 @@ body::before {
 body,
 button,
 a {
-  font-family: Inter, Manrope, "Segoe UI", sans-serif;
+  font-family: inherit;
 }
 
 a {
@@ -116,7 +116,7 @@ button:focus-visible {
 
 .wordmark {
   font-size: 1.05rem;
-  font-weight: 750;
+  font-weight: 700;
   letter-spacing: -0.07em;
 }
 
@@ -162,31 +162,10 @@ button:focus-visible {
   gap: clamp(2rem, 4vw, 4rem);
   margin-inline: 0;
   padding: 3.5rem max(var(--page-gutter), calc((100% - var(--page-width)) / 2)) 4.5rem;
-}
-
-.hero::before {
-  position: absolute;
-  z-index: -1;
-  inset: -4rem -3vw;
   background:
-    radial-gradient(ellipse 34rem 21rem at 91% 18%,
-      rgb(255 196 61 / 52%) 0%,
-      rgb(255 196 61 / 35%) 38%,
-      rgb(255 196 61 / 14%) 66%,
-      transparent 100%),
-    radial-gradient(ellipse 28rem 17rem at 72% 68%,
-      rgb(255 196 61 / 27%) 0%,
-      rgb(255 196 61 / 13%) 48%,
-      transparent 100%),
-    radial-gradient(ellipse 35rem 18rem at 2% 103%,
-      rgb(255 196 61 / 37%) 0%,
-      rgb(255 196 61 / 21%) 43%,
-      rgb(255 196 61 / 8%) 70%,
-      transparent 100%);
-  content: "";
-  filter: blur(48px);
-  opacity: 0.8;
-  pointer-events: none;
+    linear-gradient(90deg, rgb(250 249 246 / 30%), rgb(250 249 246 / 18%) 58%, rgb(250 249 246 / 10%) 100%),
+    url("img/hero.jpg") center / cover no-repeat;
+  color: var(--color-text);
 }
 
 .hero-copy {
@@ -220,7 +199,7 @@ button:focus-visible {
 }
 
 .hero h1 .hero-name {
-  font-weight: 350;
+  font-weight: 400;
 }
 
 .hero-description {
@@ -228,6 +207,11 @@ button:focus-visible {
   margin: 1.7rem 0 0;
   color: var(--color-muted);
   font-size: clamp(1rem, 1.5vw, 1.12rem);
+}
+
+.hero .eyebrow,
+.hero .link-arrow {
+  color: var(--color-text);
 }
 
 .hero-actions {
@@ -247,7 +231,7 @@ button:focus-visible {
   border: 1px solid transparent;
   border-radius: 9px;
   font-size: 0.86rem;
-  font-weight: 650;
+  font-weight: 600;
   transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
 }
 
@@ -391,7 +375,7 @@ button:focus-visible {
 .about h2 {
   margin: 0;
   font-size: clamp(2.6rem, 6vw, 4.5rem);
-  font-weight: 450;
+  font-weight: 400;
   letter-spacing: -0.075em;
   line-height: 1;
 }
@@ -633,7 +617,7 @@ button:focus-visible {
   min-width: 0;
   margin: 0;
   font-size: 1.1rem;
-  font-weight: 550;
+  font-weight: 500;
   letter-spacing: -0.035em;
   line-height: 1.2;
 }
@@ -795,7 +779,7 @@ button:focus-visible {
   cursor: pointer;
   font: inherit;
   font-size: 0.54rem;
-  font-weight: 650;
+  font-weight: 600;
   letter-spacing: 0.08em;
   white-space: nowrap;
   transition: color 180ms ease, opacity 180ms ease;
@@ -996,21 +980,6 @@ button:focus-visible {
     grid-template-columns: 1fr;
     gap: 0;
     padding-block: 4rem 3.5rem;
-  }
-
-  .hero::before {
-    inset: -2rem -20vw;
-    background:
-      radial-gradient(ellipse 31rem 17rem at 87% 48%,
-        rgb(255 196 61 / 48%) 0%,
-        rgb(255 196 61 / 30%) 40%,
-        rgb(255 196 61 / 12%) 70%,
-        transparent 100%),
-      radial-gradient(ellipse 26rem 12rem at 4% 100%,
-        rgb(255 196 61 / 34%) 0%,
-        rgb(255 196 61 / 18%) 52%,
-        transparent 100%);
-    filter: blur(38px);
   }
 
   .hero h1 {
